@@ -24,7 +24,7 @@ class AppErrorWidget extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             'Error',
-            style: Theme.of(context).textTheme.headline6?.copyWith(
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
           ),
@@ -34,7 +34,7 @@ class AppErrorWidget extends StatelessWidget {
             child: Text(
               message,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.subtitle2,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
           if (onRetry != null) ...[

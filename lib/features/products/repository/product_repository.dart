@@ -1,6 +1,7 @@
-import 'package:supplier_management/core/constants/app_constants.dart';
-import 'package:supplier_management/core/database/database_helper.dart';
-import 'package:supplier_management/features/products/models/product.dart';
+import 'package:sqflite/sqflite.dart';
+import '../../../core/constants/app_constants.dart';
+import '../../../core/database/database_helper.dart';
+import '../models/product.dart';
 
 class ProductRepository {
   final DatabaseHelper _databaseHelper;

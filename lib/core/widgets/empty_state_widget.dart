@@ -33,7 +33,7 @@ class EmptyStateWidget extends StatelessWidget {
             Text(
               message,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline6?.copyWith(
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: Colors.grey[700],
                   ),
             ),
@@ -42,7 +42,7 @@ class EmptyStateWidget extends StatelessWidget {
               Text(
                 subMessage!,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: Colors.grey[600],
                     ),
               ),

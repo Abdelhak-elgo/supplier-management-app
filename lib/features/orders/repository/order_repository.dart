@@ -1,11 +1,12 @@
-import 'package:supplier_management/core/constants/app_constants.dart';
-import 'package:supplier_management/core/database/database_helper.dart';
-import 'package:supplier_management/features/clients/models/client.dart';
-import 'package:supplier_management/features/clients/repository/client_repository.dart';
-import 'package:supplier_management/features/orders/models/order.dart';
-import 'package:supplier_management/features/orders/models/order_item.dart';
-import 'package:supplier_management/features/products/models/product.dart';
-import 'package:supplier_management/features/products/repository/product_repository.dart';
+import 'package:sqflite/sqflite.dart';
+import '../../../core/constants/app_constants.dart';
+import '../../../core/database/database_helper.dart';
+import '../../clients/models/client.dart';
+import '../../clients/repository/client_repository.dart';
+import '../models/order.dart';
+import '../models/order_item.dart';
+import '../../products/models/product.dart';
+import '../../products/repository/product_repository.dart';
 
 class OrderRepository {
   final DatabaseHelper _databaseHelper;
@@ -106,7 +107,7 @@ class OrderRepository {
 
   Future<int> createOrder(Order order, List<OrderItem> items) async {
     final db = await _databaseHelper.database;
-    int orderId;
+    int orderId = 0;
 
     await db.transaction((txn) async {
       // Insert order
@@ -146,7 +147,7 @@ class OrderRepository {
 
   Future<int> updateOrder(Order order, List<OrderItem> items) async {
     final db = await _databaseHelper.database;
-    int result;
+    int result = 0;
 
     await db.transaction((txn) async {
       // Update order
@@ -228,7 +229,7 @@ class OrderRepository {
 
   Future<int> deleteOrder(int id) async {
     final db = await _databaseHelper.database;
-    int result;
+    int result = 0;
 
     await db.transaction((txn) async {
       // Get order items to restore product quantities

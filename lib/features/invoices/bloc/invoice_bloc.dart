@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:supplier_management/features/invoices/models/invoice.dart';
 import 'package:supplier_management/features/invoices/repository/invoice_repository.dart';
 import 'package:supplier_management/features/orders/models/order.dart';
+import 'package:supplier_management/features/orders/repository/order_repository.dart';
 
 // Events
 abstract class InvoiceEvent {}
@@ -90,8 +91,9 @@ class InvoiceError extends InvoiceState {
 // BLoC
 class InvoiceBloc extends Bloc<InvoiceEvent, InvoiceState> {
   final InvoiceRepository _invoiceRepository;
+  final OrderRepository _orderRepository;
 
-  InvoiceBloc(this._invoiceRepository) : super(InvoiceInitial()) {
+  InvoiceBloc(this._invoiceRepository, this._orderRepository) : super(InvoiceInitial()) {
     on<LoadInvoices>(_onLoadInvoices);
     on<LoadInvoicesByStatus>(_onLoadInvoicesByStatus);
     on<LoadInvoiceById>(_onLoadInvoiceById);

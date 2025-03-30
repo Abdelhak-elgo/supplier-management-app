@@ -1,4 +1,4 @@
-modules = ["flutter"]
+modules = ["flutter", "flutter-3.16.5", "nodejs-20"]
 
 [nix]
 channel = "stable-24_05"
@@ -15,10 +15,6 @@ author = "agent"
 task = "workflow.run"
 args = "Flutter App Server"
 
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "flutter_app"
-
 [[workflows.workflow]]
 name = "Flutter App Server"
 author = "agent"
@@ -34,19 +30,9 @@ task = "shell.exec"
 args = "flutter run -d web-server --web-hostname=0.0.0.0 --web-port=5000"
 waitForPort = 5000
 
-[[workflows.workflow]]
-name = "flutter_app"
-author = "agent"
-
-[workflows.workflow.metadata]
-agentRequireRestartOnSave = false
-
-[[workflows.workflow.tasks]]
-task = "packager.installForAll"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "flutter run -d web-server --web-hostname=0.0.0.0 --web-port=8080 lib/main.dart"
-
 [deployment]
 run = ["sh", "-c", "flutter run -d web-server --web-hostname=0.0.0.0 --web-port=5000"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80

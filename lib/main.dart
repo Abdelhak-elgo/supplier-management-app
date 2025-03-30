@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:supplier_management/app.dart';
-import 'package:supplier_management/core/database/database_helper.dart';
-import 'package:supplier_management/features/clients/bloc/client_bloc.dart';
-import 'package:supplier_management/features/clients/repository/client_repository.dart';
-import 'package:supplier_management/features/dashboard/bloc/dashboard_bloc.dart';
-import 'package:supplier_management/features/dashboard/repository/dashboard_repository.dart';
-import 'package:supplier_management/features/invoices/bloc/invoice_bloc.dart';
-import 'package:supplier_management/features/invoices/repository/invoice_repository.dart';
-import 'package:supplier_management/features/orders/bloc/order_bloc.dart';
-import 'package:supplier_management/features/orders/repository/order_repository.dart';
-import 'package:supplier_management/features/products/bloc/product_bloc.dart';
-import 'package:supplier_management/features/products/repository/product_repository.dart';
-import 'package:supplier_management/features/reports/bloc/report_bloc.dart';
-import 'package:supplier_management/features/reports/repository/report_repository.dart';
+import 'app.dart';
+import 'core/database/database_helper.dart';
+import 'features/clients/bloc/client_bloc.dart';
+import 'features/clients/repository/client_repository.dart';
+import 'features/dashboard/bloc/dashboard_bloc.dart';
+import 'features/dashboard/repository/dashboard_repository.dart';
+import 'features/invoices/bloc/invoice_bloc.dart';
+import 'features/invoices/repository/invoice_repository.dart';
+import 'features/orders/bloc/order_bloc.dart';
+import 'features/orders/repository/order_repository.dart';
+import 'features/products/bloc/product_bloc.dart';
+import 'features/products/repository/product_repository.dart';
+import 'features/reports/bloc/report_bloc.dart';
+import 'features/reports/repository/report_repository.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +33,7 @@ void main() async {
   final productRepository = ProductRepository(databaseHelper);
   final clientRepository = ClientRepository(databaseHelper);
   final orderRepository = OrderRepository(databaseHelper);
-  final invoiceRepository = InvoiceRepository(databaseHelper);
+  final invoiceRepository = InvoiceRepository(databaseHelper, orderRepository);
   final dashboardRepository = DashboardRepository(databaseHelper);
   final reportRepository = ReportRepository(databaseHelper);
   

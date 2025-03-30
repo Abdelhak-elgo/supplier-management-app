@@ -212,7 +212,7 @@ class PdfService {
               ),
               pw.Padding(
                 padding: const pw.EdgeInsets.all(8),
-                child: pw.Text(item.productName, style: pw.TextStyle(font: font)),
+                child: pw.Text(item.productName ?? 'Product', style: pw.TextStyle(font: font)),
               ),
               pw.Padding(
                 padding: const pw.EdgeInsets.all(8),

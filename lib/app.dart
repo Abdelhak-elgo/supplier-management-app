@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:supplier_management/core/theme/app_theme.dart';
-import 'package:supplier_management/core/widgets/app_drawer.dart';
-import 'package:supplier_management/features/dashboard/screens/dashboard_screen.dart';
-import 'package:supplier_management/features/products/screens/product_list_screen.dart';
-import 'package:supplier_management/features/products/screens/add_edit_product_screen.dart';
-import 'package:supplier_management/features/products/screens/product_detail_screen.dart';
-import 'package:supplier_management/features/clients/screens/client_list_screen.dart';
-import 'package:supplier_management/features/clients/screens/add_edit_client_screen.dart';
-import 'package:supplier_management/features/clients/screens/client_detail_screen.dart';
-import 'package:supplier_management/features/orders/screens/order_list_screen.dart';
-import 'package:supplier_management/features/orders/screens/add_edit_order_screen.dart';
-import 'package:supplier_management/features/orders/screens/order_detail_screen.dart';
-import 'package:supplier_management/features/invoices/screens/invoice_list_screen.dart';
-import 'package:supplier_management/features/invoices/screens/invoice_detail_screen.dart';
-import 'package:supplier_management/features/reports/screens/report_screen.dart';
+import 'core/theme/app_theme.dart';
+import 'core/widgets/app_drawer.dart';
+import 'features/dashboard/screens/dashboard_screen.dart';
+import 'features/products/screens/product_list_screen.dart';
+import 'features/products/screens/add_edit_product_screen.dart';
+import 'features/products/screens/product_detail_screen.dart';
+import 'features/clients/screens/client_list_screen.dart';
+import 'features/clients/screens/add_edit_client_screen.dart';
+import 'features/clients/screens/client_detail_screen.dart';
+import 'features/orders/screens/order_list_screen.dart';
+import 'features/orders/screens/add_edit_order_screen.dart';
+import 'features/orders/screens/order_detail_screen.dart';
+import 'features/invoices/screens/invoice_list_screen.dart';
+import 'features/invoices/screens/invoice_detail_screen.dart';
+// Temporarily comment out until ReportScreen is implemented
+// import 'features/reports/screens/report_screen.dart';
 
 class SupplierManagementApp extends StatelessWidget {
   const SupplierManagementApp({Key? key}) : super(key: key);
@@ -43,7 +44,8 @@ class SupplierManagementApp extends StatelessWidget {
         '/orders/detail': (context) => const OrderDetailScreen(),
         '/invoices': (context) => const InvoiceListScreen(),
         '/invoices/detail': (context) => const InvoiceDetailScreen(),
-        '/reports': (context) => const ReportScreen(),
+        // Temporarily disabled until ReportScreen is implemented
+        // '/reports': (context) => const ReportScreen(),
       },
     );
   }

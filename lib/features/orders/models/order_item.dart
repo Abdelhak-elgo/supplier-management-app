@@ -71,7 +71,7 @@ class OrderItem {
     };
 
     if (id != null) {
-      map['id'] = id;
+      map['id'] = id!;
     }
 
     return map;

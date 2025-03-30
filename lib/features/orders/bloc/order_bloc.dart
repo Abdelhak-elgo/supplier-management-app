@@ -1,11 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:supplier_management/features/clients/models/client.dart';
-import 'package:supplier_management/features/clients/repository/client_repository.dart';
-import 'package:supplier_management/features/orders/models/order.dart';
-import 'package:supplier_management/features/orders/models/order_item.dart';
-import 'package:supplier_management/features/orders/repository/order_repository.dart';
-import 'package:supplier_management/features/products/models/product.dart';
-import 'package:supplier_management/features/products/repository/product_repository.dart';
+import '../../clients/models/client.dart';
+import '../../clients/repository/client_repository.dart';
+import '../models/order.dart';
+import '../models/order_item.dart';
+import '../repository/order_repository.dart';
+import '../../products/models/product.dart';
+import '../../products/repository/product_repository.dart';
 
 // Events
 abstract class OrderEvent {}
