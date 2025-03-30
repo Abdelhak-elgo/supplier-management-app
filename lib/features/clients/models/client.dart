@@ -70,7 +70,7 @@ class Client {
     };
 
     if (id != null) {
-      map['id'] = id;
+      map['id'] = id.toString();
     }
 
     return map;

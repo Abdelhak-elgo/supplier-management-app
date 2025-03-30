@@ -89,7 +89,7 @@ class Order {
     };
 
     if (id != null) {
-      map['id'] = id;
+      map['id'] = id.toString();
     }
 
     if (updatedAt != null) {
